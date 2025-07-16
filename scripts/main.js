@@ -158,3 +158,15 @@ scrollToTopBtn.addEventListener('click', () => {
     behavior: 'smooth'
   });
 });
+
+// -------------------------------
+// Scroll the Input into View on Focus
+// -------------------------------
+
+document.querySelectorAll('.modal input, .modal textarea').forEach(el => {
+  el.addEventListener('focus', () => {
+    setTimeout(() => {
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 300); // give time for keyboard to show
+  });
+});
